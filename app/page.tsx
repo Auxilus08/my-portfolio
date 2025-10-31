@@ -123,7 +123,7 @@ export default function Page() {
                   <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">EDUCATION</p>
                   <div className="text-sm">
                     <p className="font-semibold">B.Tech Computer Science</p>
-                    <p className="text-xs text-white/60">RKNEC, Nagpur • 2023–2027</p>
+                    <p className="text-xs text-white/60">RCOEM, Nagpur • 2023–2027</p>
                   </div>
                 </div>
               </div>
