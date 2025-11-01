@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Linkedin, Github, MapPin } from "lucide-react"
+import { Mail, Linkedin, Github, MapPin, Star, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import DotGridShader from "@/components/DotGridShader"
 import ProjectCard from "@/components/project-card"
@@ -48,6 +48,21 @@ export default function Page() {
       gradientFrom: "#0f172a",
       gradientTo: "#a78bfa",
     },
+  ]
+
+  const contributions = [
+    { 
+      name: "Apache Gravitino",
+      description: "Contributed fixes and robustness improvements to Apache Gravitino.",
+      language: "Java", 
+      stars: 8500, 
+      href: "https://github.com/apache/gravitino" 
+    },
+    { name: "SnipShare", 
+      description: "Contributed development improvements: implemented new features, fixed bugs, added tests, and improved CI and code quality.", 
+      language: "JavaScript", 
+      stars: 3,
+      href: "https://github.com/Auxilus08/snipshare" }
   ]
 
   return (
@@ -176,6 +191,90 @@ export default function Page() {
                 containerClassName="lg:h-[calc(100svh-2rem)]"
                 revealDelay={idx * 0.06}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OPEN SOURCE CONTRIBUTIONS SECTION */}
+      <section className="px-4 pb-16">
+        <div className="mx-auto max-w-7xl">
+          <RevealOnView intensity="medium" className="mb-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-black tracking-tight sm:text-4xl">Open Source Contributions</h2>
+              <p className="mt-2 text-sm text-white/60">
+                Contributing to the tools and libraries that power modern development
+              </p>
+              
+              {/* Hacktoberfest Badge */}
+              <div className="mt-6 flex justify-center">
+                <Link
+                  href="https://www.holopin.io/@akshat0824#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 rounded-full border border-orange-500/30 bg-orange-500/10 px-6 py-3 backdrop-blur-sm transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/20"
+                >
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500/20">
+                    <span className="text-lg">🎃</span>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm font-bold text-orange-300">Hacktoberfest 2024</p>
+                    <p className="text-xs text-orange-400/80">Participant & Contributor</p>
+                  </div>
+                  <ExternalLink className="h-4 w-4 text-orange-400/60" />
+                </Link>
+              </div>
+            </div>
+          </RevealOnView>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {contributions.map((contribution, idx) => (
+              <RevealOnView
+                key={contribution.name}
+                intensity="medium"
+                delay={idx * 0.08}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/60 p-6 transition-all duration-300 hover:border-blue-500/30"
+              >
+                {/* Texture background */}
+                <div className="pointer-events-none absolute inset-0 opacity-5 mix-blend-soft-light">
+                  <DotGridShader />
+                </div>
+
+                <div className="relative">
+                  <div className="mb-4 flex items-start justify-between">
+                    <h3 className="text-lg font-bold tracking-tight">{contribution.name}</h3>
+                    <Link
+                      href={contribution.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-white/10 p-1.5 transition-colors hover:bg-white/20"
+                      aria-label={`View ${contribution.name} on GitHub`}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                    </Link>
+                  </div>
+
+                  <p className="mb-4 text-sm leading-relaxed text-white/70">
+                    {contribution.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300 border border-blue-500/20">
+                        {contribution.language}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-sm text-white/60">
+                      <Star className="h-4 w-4 fill-yellow-500/80 text-yellow-500/80" />
+                      <span className="font-medium">
+                        {contribution.stars >= 1000
+                          ? `${(contribution.stars / 1000).toFixed(1)}k`
+                          : contribution.stars}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </RevealOnView>
             ))}
           </div>
         </div>

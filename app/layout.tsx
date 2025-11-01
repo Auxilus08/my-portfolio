@@ -5,7 +5,6 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Akshat Tiwari — Full-stack Developer",
   description: "Full-stack developer building with modern stacks. React, Next.js, Python, Java, Android.",
-  generator: "v0.dev",
 }
 
 export default function RootLayout({
