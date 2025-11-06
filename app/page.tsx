@@ -55,14 +55,22 @@ export default function Page() {
       name: "Apache Gravitino",
       description: "Contributed fixes and robustness improvements to Apache Gravitino.",
       language: "Java", 
-      stars: 8500, 
+      stars: 2500, 
       href: "https://github.com/apache/gravitino" 
+    },
+    {
+      name: "Delta-kernel-rs",
+      description: "Contributed fixes and tests cases to delta-kernel.",
+      language: "Rust",
+      stars: 275,
+      href: "https://github.com/delta-io/delta-kernel-rs"
     },
     { name: "SnipShare", 
       description: "Contributed development improvements: implemented new features, fixed bugs, added tests, and improved CI and code quality.", 
       language: "JavaScript", 
       stars: 3,
-      href: "https://github.com/Auxilus08/snipshare" }
+      href: "https://github.com/Auxilus08/snipshare" 
+    }
   ]
 
   return (
