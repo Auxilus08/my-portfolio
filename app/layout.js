@@ -8,9 +8,13 @@ const poppins = Geist({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://rahul.eu.org"),
+  metadataBase: new URL("https://akshattiwari.me"),
   title: siteConfig.name,
   description: siteConfig.description,
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,

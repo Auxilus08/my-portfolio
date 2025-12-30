@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Akshat Tiwari monogram">
+  <defs>
+    <linearGradient id="bg" x1="12" y1="8" x2="84" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101218" />
+      <stop offset="1" stop-color="#1b1f29" />
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#bg)" />
+  <path d="M24 70.5 48 18l24 52.5h-13l-11-25.5-11 25.5H24Z" fill="#f5f7ff" />
+  <path d="M42 31h32v9h-9v30H56V40h-14v-9Z" fill="#8ea2ff" />
+</svg>
