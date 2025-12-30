@@ -89,6 +89,7 @@ export default function LeetCode() {
   ];
 
   const badgeName = data?.badge?.name || "Active";
+  const badgeIcon = data?.badge?.icon || null;
   const statusText =
     status === "loading"
       ? "Loading live stats..."
@@ -176,10 +177,21 @@ export default function LeetCode() {
                 Active
               </span>
             </div>
-            <p className="text-sm font-semibold">{badgeName}</p>
-            <p className="text-xs text-foreground/70">
-              Live stats pulled on request
-            </p>
+            <div className="flex items-center gap-2">
+              <div className="h-10 w-10 rounded-lg border border-border/40 bg-card/60 flex items-center justify-center overflow-hidden">
+                {badgeIcon ? (
+                  <img
+                    src={badgeIcon}
+                    alt={badgeName}
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Medal className="h-5 w-5 text-amber-500" />
+                )}
+              </div>
+              <p className="text-sm font-semibold">{badgeName}</p>
+            </div>
             <p className="text-xs text-foreground/70" aria-live="polite">
               {statusText}
             </p>

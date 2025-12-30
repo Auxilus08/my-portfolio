@@ -43,6 +43,10 @@ export async function GET() {
               reputation
               realName
             }
+            activeBadge {
+              displayName
+              icon
+            }
             submitStatsGlobal {
               acSubmissionNum {
                 difficulty
@@ -102,7 +106,7 @@ export async function GET() {
     const easy = getCount("easy");
     const medium = getCount("medium");
     const hard = getCount("hard");
-    const badge = null;
+    const badge = user?.activeBadge ?? null;
 
     const response = {
       rating: contestData?.rating ?? null,
