@@ -6,7 +6,7 @@ import Link from "next/link";
 const summary = [
   { label: "Total PRs", value: "5" },
   { label: "Merged", value: "4" },
-  { label: "Projects", value: "2 Apache projects" },
+  { label: "Projects", value: "1 Apache project & 1 Linux Foundation Project" },
   { label: "Languages", value: "Java, Rust" },
   {
     label: "Focus",
